@@ -42,20 +42,12 @@ def isWordGuessed(secretWord, lettersGuessed):
 
     return True
 
-def getGuessedWord():
-
-     guessed = ''
-
-
-     return guessed
-
 def getAvailableLetters():
-    import string
     # 'abcdefghijklmnopqrstuvwxyz'
-    available = string.ascii_lowercase
+    availableLetters = string.ascii_lowercase
 
 
-    return available
+    return availableLetters
 
 def hangman(secretWord):
 
@@ -77,7 +69,7 @@ def hangman(secretWord):
         letter = raw_input('Please guess a letter: ')
         if letter in lettersGuessed:
 
-            guessed = getGuessedWord()
+            guessed = ''
             for letter in secretWord:
                 if letter in lettersGuessed:
                     guessed += letter
@@ -88,7 +80,7 @@ def hangman(secretWord):
         elif letter in secretWord:
             lettersGuessed.append(letter)
 
-            guessed = getGuessedWord()
+            guessed = ''
             for letter in secretWord:
                 if letter in lettersGuessed:
                     guessed += letter
@@ -100,7 +92,7 @@ def hangman(secretWord):
             guesses -=1
             lettersGuessed.append(letter)
 
-            guessed = getGuessedWord()
+            guessed = ''
             for letter in secretWord:
                 if letter in lettersGuessed:
                     guessed += letter
